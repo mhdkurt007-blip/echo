@@ -2,6 +2,7 @@ import { Link, router } from 'expo-router';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
 import { Alert, Button, StyleSheet, Text, TextInput, useColorScheme, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { auth } from '../../firebaseConfig';
 
 export default function LoginScreen() {
@@ -31,7 +32,7 @@ export default function LoginScreen() {
 
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Giriş Yap</Text>
       
       <Text style={[styles.label, labelStyle]}>E-posta</Text>
@@ -62,7 +63,7 @@ export default function LoginScreen() {
       <Link href="/(auth)/signup" style={styles.linkContainer}>
         <Text style={styles.linkText}>Hesabın yok mu? Kayıt Ol</Text>
       </Link>
-    </View>
+    </SafeAreaView>
   );
 }
 
